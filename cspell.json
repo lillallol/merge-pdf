@@ -1,0 +1,4 @@
+{
+	"ignorePaths": ["node_modules/**","package-lock.json","jest.config.js","./**/*.pdf"],
+	"ignoreWords": ["lillallol","npm","postpublish"]
+}

@@ -1,0 +1,50 @@
+{
+	"name": "@lillallol/merge-pdf",
+	"version": "1.0.0",
+	"description": "High level API that uses pdf-lib to merge pdf. Does not use code from other programming languages.",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"test": "jest",
+		"lint": "npx eslint ./src/**/*.ts;npx tsc --noEmit;",
+		"build": "npx tsc -p ./tsconfig.build.json;",
+		"spell-check" : "cspell \"./**/*\"",
+		"prepublishOnly": "rm -rf ./dist && npm run spell-check && npm run lint && npm run test && npm run build",
+		"postpublish": "rm -rf ./dist && git add --all && git commit && git push origin master"
+	},
+	"keywords": [
+		"merge pdf",
+		"merge",
+		"concatenate pdf",
+		"concatenate",
+		"glue pdf",
+		"glue",
+		"pdf-lib",
+		"high level API",
+		"high level",
+		"API"
+	],
+	"files": [
+		"dist",
+		"TODO.md"
+	],
+	"author": "lillallol",
+	"license": "ISC",
+	"dependencies": {
+		"pdf-lib": "^1.11.2"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.2",
+		"@typescript-eslint/eslint-plugin": "^4.5.0",
+		"@typescript-eslint/parser": "^4.5.0",
+		"cspell": "^4.1.2",
+		"eslint": "^7.11.0",
+		"jest": "^26.6.1",
+		"ts-jest": "^26.4.3",
+		"ts-node": "^9.0.0",
+		"typescript": "^4.0.3"
+	},
+	"repository":  "https://github.com/lillallol/merge-pdf",
+	"bugs": "https://github.com/lillallol/merge-pdf/issues",
+	"homepage": "https://github.com/lillallol/merge-pdf"
+}

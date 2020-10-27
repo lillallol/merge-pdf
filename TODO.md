@@ -1,0 +1,2 @@
+- update the link about documentation to pdf
+- add git hooks
