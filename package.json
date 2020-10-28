@@ -1,6 +1,6 @@
 {
 	"name": "@lillallol/merge-pdf",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "High level API that uses pdf-lib to merge pdf. Does not use code from other programming languages.",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
