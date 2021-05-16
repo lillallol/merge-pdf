@@ -14,14 +14,14 @@ beforeAll(async () => {
     }
 });
 
-describe("savePdf(path: string, pdf: PDFDocument)", () => {
-	//@TODO
-	// it("calls throwIfPathDoesNotEndWithPdf",() => {
-		
-	// })
-	// it("calls rejectIfPathExists",() => {
+describe(savePdf.name, () => {
+    //@TODO
+    // it("calls throwIfPathDoesNotEndWithPdf",() => {
 
-	// })
+    // })
+    // it("calls rejectIfPathExists",() => {
+
+    // })
     it("saves the pdf to the provided path", async () => {
         const pdf = await PDFDocument.create();
         await savePdf(path.resolve(__dirname, pdfToSaveFileName), pdf);

@@ -5,7 +5,7 @@ import { rejectIfPathExists } from "../rejectIfPathExists/rejectIfPathExists";
 
 /**
  * @description It saves the provided pdf to the provided path.
- * It throws if for the provided path there is already a file/directory.
+ * It throws if for the provided path there is already a file/directory or the path does not end  with `.pdf`.
  * @example
  * (async () => {
  * 	await savePdf("path/to/save/my.pdf",pdfDocumentInstance);
@@ -13,7 +13,7 @@ import { rejectIfPathExists } from "../rejectIfPathExists/rejectIfPathExists";
  *
  */
 export async function savePdf(path: string, pdf: PDFDocument): Promise<void> {
-    throwIfPathDoesNotEndWithPdf(path);
-    await rejectIfPathExists(path);
-    await fs.writeFile(path, await pdf.save());
+	throwIfPathDoesNotEndWithPdf(path);
+	await rejectIfPathExists(path);
+	await fs.writeFile(path, await pdf.save());
 }

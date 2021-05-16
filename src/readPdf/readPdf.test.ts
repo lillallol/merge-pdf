@@ -3,7 +3,7 @@ import { PDFDocument } from "pdf-lib";
 
 import { readPdf } from "./readPdf";
 
-describe("readPdf(path: string)", () => {
+describe(readPdf.name, () => {
 	// //@TODO
 	// it("calls throwIfPathDoesNotEndWithPdf") {
 

@@ -1,4 +1,4 @@
 {
-	"ignorePaths": ["node_modules/**","package-lock.json","jest.config.js","./**/*.pdf"],
-	"ignoreWords": ["lillallol","npm","postpublish"]
+	"ignorePaths": ["node_modules/**","package-lock.json","jest.config.js","./**/*.pdf","coverage/**","TBD/**"],
+	"ignoreWords": ["lillallol","npm","unimported","mergepdf","endregion"]
 }

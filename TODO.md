@@ -1,1 +1,3 @@
-- update the link about documentation to pdf
+- use my dic
+
+- find all todo and finish them

@@ -1,56 +1,62 @@
 {
-	"name": "@lillallol/merge-pdf",
-	"version": "1.0.1",
-	"description": "High level API that uses pdf-lib to merge pdf. Does not use code from other programming languages.",
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"scripts": {
-		"spell-check": "cspell \"./**/*\"",
-		"lint": "npx eslint ./src/**/*.ts;npx tsc --noEmit;",
-		"test": "jest",
-		"build": "npx tsc -p ./tsconfig.build.json;",
-		"validate-package": "rm -rf ./dist && npm run spell-check && npm run lint && npm run test && npm run build",
-		"commit-and-push": "git add --all && git commit && git push origin master",
-		"pre-bump": "npm run validate-package && npm run commit-and-push",
-		"first-publish": "npm run pre-bump && npm publish --access public && npm run after-bump",
-		"bump-patch": "npm run pre-bump && npm version patch && npm publish && npm run after-bump",
-		"bump-minor": "npm run pre-bump && npm version minor && npm publish && npm run after-bump",
-		"bump-major": "npm run pre-bump && npm version major && npm publish && npm run after-bump",
-		"after-bump": "rm -rf ./dist"
-	},
-	"keywords": [
-		"merge pdf",
-		"merge",
-		"concatenate pdf",
-		"concatenate",
-		"glue pdf",
-		"glue",
-		"pdf-lib",
-		"high level API",
-		"high level",
-		"API"
-	],
-	"files": [
-		"dist",
-		"TODO.md"
-	],
-	"author": "lillallol",
-	"license": "MIT",
-	"dependencies": {
-		"pdf-lib": "^1.11.2"
-	},
-	"devDependencies": {
-		"@types/node": "^14.14.2",
-		"@typescript-eslint/eslint-plugin": "^4.5.0",
-		"@typescript-eslint/parser": "^4.5.0",
-		"cspell": "^4.1.2",
-		"eslint": "^7.11.0",
-		"jest": "^26.6.1",
-		"ts-jest": "^26.4.3",
-		"ts-node": "^9.0.0",
-		"typescript": "^4.0.3"
-	},
-	"repository": "https://github.com/lillallol/merge-pdf",
-	"bugs": "https://github.com/lillallol/merge-pdf/issues",
-	"homepage": "https://github.com/lillallol/merge-pdf"
+    "name": "@lillallol/merge-pdf",
+    "version": "1.0.1",
+    "description": "High level API that uses pdf-lib to merge pdf. Does not use code from other programming languages.",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "check-updates": "ncu",
+        "update": "npx ncu -u;npm install",
+        "dead-files": "unimported",
+        "spell-check": "cspell \"./**/*\"",
+        "lint": "eslint ./src/**/*.ts --max-warnings=0 && tsc --noEmit;",
+        "test": "rm -rf ./coverage && npx jest --clearCache && npx jest ./src --coverage --silent",
+        "build-ts": "npx tsc -p ./tsconfig.build.json;",
+        "build-md": "rm -rf ./documentation.md;npx ts-doc-gen-md -o \"'./documentation.md'\";npx md-in-place",
+        "build": "npm run build-ts;npm run build-md",
+        "pre-bump": "npm run dead-files && npm run spell-check && npm run lint && npm run test && npm run build && git add --all && git commit",
+        "release": "npm run pre-bump && npm publish --access public && npm run after-bump",
+        "bump-patch": "npm run pre-bump && npm version patch && npm publish && npm run after-bump",
+        "bump-minor": "npm run pre-bump && npm version minor && npm publish && npm run after-bump",
+        "bump-major": "npm run pre-bump && npm version major && npm publish && npm run after-bump",
+        "after-bump": "rm -rf ./dist && git push origin master"
+    },
+    "keywords": [
+        "merge pdf",
+        "merge",
+        "concatenate pdf",
+        "concatenate",
+        "glue pdf",
+        "glue",
+        "pdf-lib",
+        "high level API",
+        "high level",
+        "API"
+    ],
+    "files": [
+        "dist"
+    ],
+    "author": "lillallol",
+    "license": "MIT",
+    "dependencies": {
+        "pdf-lib": "^1.16.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.23",
+        "@typescript-eslint/eslint-plugin": "^4.23.0",
+        "@typescript-eslint/parser": "^4.23.0",
+        "cspell": "^5.4.1",
+        "eslint": "^7.26.0",
+        "jest": "^26.6.3",
+        "md-in-place": "^1.0.1",
+        "npm-check-updates": "^11.5.13",
+        "ts-doc-gen-md": "*",
+        "ts-jest": "^26.5.6",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.4",
+        "unimported": "^1.11.0"
+    },
+    "repository": "https://github.com/lillallol/merge-pdf",
+    "bugs": "https://github.com/lillallol/merge-pdf/issues",
+    "homepage": "https://github.com/lillallol/merge-pdf"
 }

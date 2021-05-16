@@ -5,6 +5,7 @@ import { throwIfPathDoesNotEndWithPdf } from "../common/throwIfPathDoesNotEndWit
 
 /**
  * @description It reads the pdf file of the provide path, to return a PDFDocument instance of it.
+ * It throws if the provided path does not end with `.pdf`.
  */
 export async function readPdf(path: string): Promise<PDFDocument> {
     throwIfPathDoesNotEndWithPdf(path);
